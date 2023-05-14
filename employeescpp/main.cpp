@@ -36,6 +36,9 @@ int main() {
         Employee employee = Employee(name, age);
         employees.push_back(employee);
         std::cout << employees.size() << "\n";
+      } else if (input == "E")
+      {
+        exit(0);
       } 
   }
   return 0;
