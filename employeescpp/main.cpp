@@ -16,20 +16,27 @@ struct Employee {
 };
 
 int main() {
-  std::cout << "Hello, Welcome to Employee Manager\n";
+  std::cout << "Hello, Welcome to Employee Management System\n";
   std::vector<Employee> employees;
+  std::string input;
   while(true) {
-    std::cout << "Enter employee name: \n";
-    std::string name;
-    std::cin >> name;
-    std::cout << "Enter employee age: \n";
-    int age;
-    std::cin >> age;
-    Employee employee = Employee(name, age);
-    employees.push_back(employee);
-    std::cout << employees.size() << "\n";
+    std::cout << "Choose an action:\n";
+    std::cout << "Add new employee (A)\n";
+    std::cout << "List existing employees (L)\n";
+    std::cout << "Exit EMS (E)\n";
+    std::cin >> input;
+      if (input == "A")
+      {
+        std::cout << "Enter employee name: \n";
+        std::string name;
+        std::cin >> name;
+        std::cout << "Enter employee age: \n";
+        int age;
+        std::cin >> age;
+        Employee employee = Employee(name, age);
+        employees.push_back(employee);
+        std::cout << employees.size() << "\n";
+      } 
   }
-
   return 0;
-
 };
