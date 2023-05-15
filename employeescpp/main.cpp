@@ -25,6 +25,7 @@ int main() {
     std::cout << "List existing employees (L)\n";
     std::cout << "Exit EMS (E)\n";
     std::cin >> input;
+    int len = sizeof(employees);
       if (input == "A")
       {
         std::cout << "Enter employee name: \n";
@@ -36,6 +37,12 @@ int main() {
         Employee employee = Employee(name, age);
         employees.push_back(employee);
         std::cout << employees.size() << "\n";
+      } else if (input == "L")
+      {
+        for ( int i  = 0; i < len; i++) {
+          std::cout << employees[i].name << "\n";
+          std::cout << employees[i].age << "\n";
+        }
       } else if (input == "E")
       {
         exit(0);
