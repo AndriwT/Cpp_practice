@@ -39,10 +39,16 @@ int main() {
         std::cout << employees.size() << "\n";
       } else if (input == "L")
       {
-        for ( int i  = 0; i < employees.size(); i++) {
-          std::cout << employees[i].name << "\n";
-          std::cout << employees[i].age << "\n";
-        }
+        if (employees.size() != 0) 
+        {   
+          for ( int i  = 0; i < employees.size(); i++) {
+            std::cout << employees[i].name << "\n";
+            std::cout << employees[i].age << "\n";
+          } 
+        } else 
+          {
+            std::cout << "There's no employees to list\n";
+          }
       } else if (input == "E")
       {
         exit(0);
