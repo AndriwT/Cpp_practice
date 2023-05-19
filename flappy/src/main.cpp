@@ -1,6 +1,7 @@
 #include <iostream>
 #include <raylib.h>
 #include "bird.h"
+#include "pipe.h"
 
 int main() {
   std::cout << "Hello world" << "\n";
@@ -10,6 +11,7 @@ int main() {
   InitWindow(screenWidth, screenHeight, "Flappy Bird");
 
   Bird bird;
+  Pipe pipe = Pipe(screenWidth - screenWidth/4, screenHeight*0.75);
 
   Texture2D background = LoadTexture("assets/sprites/background-day.png");        // Texture loading
 
@@ -21,9 +23,12 @@ int main() {
       ClearBackground(RAYWHITE);
       DrawTexture(background, screenWidth/2 - background.width/2, screenHeight/2 - background.height/2, WHITE);
 
+
       bird.update();
       bird.draw();
-
+      pipe.update();
+      pipe.draw();
+      
       EndDrawing();
   }
 
